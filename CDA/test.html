@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contacts Directory Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/h8k-design@latest/dist/index.css" rel="stylesheet"/>
+    <link rel="shortcut icon" href="./contacts.png">
+    <script src="https://cdn.jsdelivr.net/npm/h8k-components/dist/h8k-components/h8k-components.esm.js"
+            type="module"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/h8k-components/dist/h8k-components/h8k-components.js"></script>
+    <style type="text/css">
+        body
+        {
+            background-image: -webkit-linear-gradient(rgb(227, 107, 185),rgb(166, 106, 145),rgb(208, 115, 115));
+        }
+        .defaultcursor,td
+        {
+            cursor: default;
+        }
+        #app-icon
+        {
+            margin-left: 25%;
+            margin-top: 10px;
+        }
+        #app-title
+        {
+            display: inline;
+            text-align: center; 
+            color:aliceblue;
+        }
+        .column-title
+        {
+            color:black;
+        }
+        #submit
+        {
+            background-color: greenyellow;
+            color:black;
+        }
+        .action_delete
+        {
+            text-align: center;
+        }
+        .action_delete:hover
+        {
+            cursor: pointer;
+            font-weight: bolder;
+            color: red;
+        }
+        #action-column
+        {
+            visibility: hidden;
+            display: none;
+            margin-top: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="panel" style="background-color: rgb(69, 119, 226);">
+    <img src="./contacts.png" id="app-icon" height="36px" width="32px" alt="Contacts icon"/>
+    <h1 id="app-title">Contacts Directory Application</h1>
+</div>
+
+<div class="mt-40 mb-20">
+    <div>
+        <section class="layout-row justify-content-center">
+            <input type="text" class="white large outlined mx-2" placeholder="Name" id="name" data-testid="name">
+            <input type="number" class="white large outlined mx-2" placeholder="Mobile number" id="mobile"
+                   data-testid="mobile">
+            <input type="email" class="white large outlined mx-2" placeholder="Email" id="email" data-testid="email">
+            <button type="submit" class="secondary flat my-0 mx-2" id="submit" data-testid="submit">Add Contact</button>
+        </section>
+    </div>
+</div>
+
+<div data-testid="error" id="error" style="visibility: hidden;background-color: white;" class="alert error w-35 mx-auto">
+    Invalid Input!
+</div>
+
+<div class="card w-40 mx-auto">
+    <div class="card-text">
+        <table id="summaryTable" data-testid="summaryTable" class="my-0">
+            <thead style="color: black;">
+            <tr>
+                <th class="column-title defaultcursor" id="nameColumn" data-testid="nameColumn">Name</th>
+                <th class="column-title defaultcursor">Mobile</th>
+                <th class="column-title defaultcursor">Email</th>
+                <th class="column-title defaultcursor" id="action-column">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<tr>
+                <td>Admin</td>
+                <td>9999999999</td>
+                <td>admin@xyzcompany.com</td>
+            </tr>-->
+            </tbody>
+        </table>
+        <p class="status defaultcursor" id="nocontacts_msg" style="text-align: center;">No Contacts Added so far.</p>
+        <p class="status defaultcursor" id="entries" style="text-align: center;visibility: hidden;"></p>
+    </div>
+</div>
+</body>
+<script src="./script.js"></script>
+<!-- HMR and test infrastructure - DO NOT EDIT 
+<script src="./bundle.js"></script>-->
+</html>
