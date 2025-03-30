@@ -1,0 +1,114 @@
+body{
+    background-color: black;
+    -webkit-user-select: none;
+    user-select: none;
+    height: 100%;
+}
+.header
+{
+    color: chartreuse;
+    line-height: 0.7;
+    text-align: center;
+}
+#line
+{
+    font-size: 20px;
+}
+.background-text
+{
+    line-height: 80%;
+}
+.box {
+    position: absolute;
+    width: 750px;
+    top: 80%;
+    left:15%;
+    animation-delay: 8s;
+    animation: fadein 4s;
+    -webkit-animation: fadein 4s;
+    background-color: darkslategray;
+    padding: 50px;
+    margin: 5px;
+  }
+  #topics
+  {
+      color: chartreuse;
+      font-weight: bold;
+      animation-delay: 8s;
+      cursor: pointer;
+      font-size: 40px;
+      text-shadow: 2px 2px 5px black;
+  }
+  #contents
+  {
+      color: chartreuse;
+      font-weight: bold;
+      animation-delay: 8s;
+      font-size: 20px;
+      text-shadow: 2px 2px 5px black;
+  }
+  #register
+  {
+      color: orange;
+      font-weight: bold;
+      text-align: center;
+      animation-delay: 8s;
+      cursor: pointer;
+      font-size: 30px;
+      text-shadow: 2px 2px 5px black;
+  }
+  #back
+  {
+      color: crimson;
+      font-weight: bold;
+      animation-delay: 8s;
+      cursor: pointer;
+      font-size: 25px;
+      text-shadow: 2px 2px 5px black;
+  }
+#title
+{
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    animation: fadein 2s;
+    -webkit-animation: fadein 2s;
+    color: chartreuse;
+    background-color: darkslategray;
+    width: 800px;
+    padding: 30px;
+    font-size: 60px;
+    text-align: center;
+  text-shadow: 2px 2px 5px black;
+}
+#title2
+{
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    -webkit-animation: fadein 3s;
+    color: chartreuse;
+    background-color: darkslategray;
+    line-height: 1;
+    width: 800px;
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+  text-shadow: 2px 2px 5px black;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.background-image {
+    background-image: url('backdrop.jpg');
+    width: 1200px;
+  height: 800px;
+    filter: blur(12px);
+    -webkit-filter: blur(12px);
+    background-position: left 30px center;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
