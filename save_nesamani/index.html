@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Nesamani Game</title>
+    <link rel="icon" href="./images/icon.png">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onkeydown='moveNesamani(event)'>
+    <!-- timer -->
+    <div class="bg-img">
+        <img id="background-scene" alt="background scene">
+    </div>
+    <div class="logo">
+      <b class="options" id="fs" onclick="goFullscreen();">🗖 Fullscreen</b>&nbsp;
+      <b class="options" id="mute" onclick="goMute();">🔈Playing Sound</b>
+      <b class="options" id="pause" onclick="PauseGame();">⏸︎Pause Game</b>
+      <b class="options" id="sharebtn" onclick="PauseGame();share();">Share Game</b>
+    </div>
+    <div class="bottom-container">
+            <img class="nesamaniJet" src="images/nesamani.png" alt="1">
+    </div>
+    <!-- timer -->
+    <div class="timer">
+        <label><span id="time">02:00</span></label>
+      </br>
+        <b class="score">Score: 0</b>
+    </div>
+
+    <!-- Saved me modal -->
+    <div class="savepopup modal fade" id="myModal" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="play-img">
+                    <img src="images/nesamani_saved.png" alt="Nesamani Saved">
+                </div>
+                <div class="play-content">
+                    <div class="play-text">
+                        <h2>You saved me!</h2>
+                        <label class="playtime">You Played for </label>
+                    </div>
+                    <div class="play-button">
+                        <a onclick="location.reload(true);">
+                            <img src="images/button_new.png" alt="Play Again">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Missed me modal -->
+    <div class="savepopup modal fade" id="missedModal" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="play-img">
+                    <img id="missedNesamani" src="images/nesamani_hit.png" alt="Nesamani Hit by Hammer">
+                </div>
+                <div class="play-content">
+                    <div class="play-text">
+                        <h2>Missed it!</h2>
+                        <label id="playtime">You Played for </label>
+                    </div>
+                    <div class="play-button">
+                        <a onclick="location.reload(true);">
+                            <img src="images/button_new.png" alt="New Game">
+                        </a>
+                        <a onclick="window.close();">
+                            <img src="images/button close.png" alt="Close Game">
+                        </a>
+                        <a onclick="share()">
+                            <span class="share">Share</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="savepopup modal fade" id="pausedModal" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <h2 class="pauseText">Game Paused</h2>
+                <div class="play-button">
+                    <p id="pausegamebtn" onclick="PauseGame();">
+                        ⏵︎ Resume Game
+                    </p>
+                 </div>
+             </div>
+        </div>
+    </div>
+    <div class="savepopup modal fade" id="shareModal" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                
+                <h2 class="pauseText">Share this Game <span id="close_share" onclick="closeShareModal();">X</span></h2>
+                <div class="play-button">
+                    <p id="pausegamebtn" onclick="share_linkedin();">
+                        Share on Linkedin
+                    </p>
+                    
+                    <p id="pausegamebtn" onclick="share_fb();">
+                        Share on Facebook
+                    </p>
+                    
+                    <p id="pausegamebtn" onclick="share_x();">
+                        Share on X
+                    </p>
+                 </div>
+             </div>
+        </div>
+    </div>
+</body>
+
+</html>
